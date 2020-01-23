@@ -4,7 +4,7 @@ import './App.css';
 
 export default function Home() {
   return (
-    <div className="App">
+    <div >
       <h3>Home</h3>
     </div>
   );

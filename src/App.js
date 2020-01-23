@@ -8,31 +8,22 @@ import Contact from './Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-        <Router >
-          <Route path = '/home' component = {Home}>
-          <Route path = '/about' component = {About} />
-          <Route path = '/contact' component = {Contact}/>
-          </Route>
-        </Router>
-        </div>
-        <a href="/about">About</a>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router >
+      <div>
+        <header >
+          <ul className="App-header">
+            <li><Link to="/"> Home </Link></li>
+            <li><Link to="/About"> About </Link></li>
+            <li><Link to="/Contact"> Contact </Link></li>
+          </ul>
+        </header>
+        <Switch>
+        <Route path = '/' exact component = {Home}/>
+        <Route path = '/about' component = {About} />
+        <Route path = '/contact' component = {Contact}/>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
