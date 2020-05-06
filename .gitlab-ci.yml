@@ -1,16 +1,25 @@
-image: alpine:latest
+# image: alpine:latest
 
-    stages:
-      - build
+#     stages:
+#       - build
 
-    cache:
-      paths:
-        - node_modules/
+#     cache:
+#       paths:
+#         - node_modules/
 
-    install_dependencies:
-      stage: build
-      script:
-        - npm install
-      artifacts:
-        paths:
-          - node_modules/
+#     install_dependencies:
+#       stage: build
+#       script:
+#         - npm install
+#       artifacts:
+#         paths:
+#           - node_modules/
+default:
+  image: alpine:latest
+
+  services:
+    - postgres:9.3
+
+test:
+  script:
+  - npm install
