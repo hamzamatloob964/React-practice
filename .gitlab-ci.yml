@@ -17,9 +17,6 @@
 default:
   image: alpine:latest
 
-  services:
-    - postgres:9.3
-
 test:
   script:
   - npm install
