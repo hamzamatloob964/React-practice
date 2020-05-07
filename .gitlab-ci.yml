@@ -1,3 +1,21 @@
+stages:
+    - build
+build:
+    stage: build
+    tags: 
+        - testing
+        - development
+    script:
+        - echo "Building deploy package"
+        - npm install
+        - npm build
+        - echo "Build successful"
+    artifacts:
+        expire_in: 1 hour
+        paths:
+            - build
+
+
 # image: alpine:latest
 
 #     stages:
@@ -14,9 +32,9 @@
 #       artifacts:
 #         paths:
 #           - node_modules/
-default:
-  image: alpine:latest
+# default:
+#   image: alpine:latest
 
-test:
-  script:
-  - npm install
+# test:
+#   script:
+#   - npm install
