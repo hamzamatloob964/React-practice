@@ -1,13 +1,29 @@
-stages:
-    - build
-build:
-    stage: build
-    tags: 
-        - testing
-        - development
-    script:
-        - echo "Building deploy package"
-        - echo "Build successful"
+--- 
+build: 
+  before_script: 
+    - "npm install"
+  script: 
+    - "echo \"Building deploy package\""
+    - "echo \"Build successful\""
+  stage: build
+  tags: 
+    - testing
+    - development
+stages: 
+  - build
+
+# stages:
+#     - build
+# build:
+#     stage: build
+#     tags: 
+#         - testing
+#         - development
+#     before_script:
+#     - npm install
+#     script:
+#         - echo "Building deploy package"
+#         - echo "Build successful"
 
 
 # image: alpine:latest
