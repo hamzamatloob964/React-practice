@@ -10,10 +10,6 @@ build:
         - npm install
         - npm build
         - echo "Build successful"
-    artifacts:
-        expire_in: 1 hour
-        paths:
-            - build
 
 
 # image: alpine:latest
