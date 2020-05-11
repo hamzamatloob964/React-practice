@@ -1,49 +1,45 @@
+# --- 
+# build: 
+#   before_script: 
+#     - "npm install"
+#   script: 
+#     - "echo \"Building deploy package\""
+#     - "echo \"Build successful\""
+#   stage: build
+#   tags: 
+#     - testing
+#     - development
+# stages: 
+#   - build
+
 --- 
 build: 
   before_script: 
     - "npm install"
+  cache: 
+    paths: 
+      - node_modules/
+  install_dependencies: 
+    artifacts: 
+      paths: 
+        - node_modules/
+    script: 
+      - "npm install"
+    stage: build
   script: 
     - "echo \"Building deploy package\""
     - "echo \"Build successful\""
   stage: build
+  stages: 
+    - build
   tags: 
     - testing
     - development
+default: 
+  image: "alpine:latest"
 stages: 
   - build
 
-# stages:
-#     - build
-# build:
-#     stage: build
-#     tags: 
-#         - testing
-#         - development
-#     before_script:
-#     - npm install
-#     script:
-#         - echo "Building deploy package"
-#         - echo "Build successful"
-
-
-# image: alpine:latest
-
-#     stages:
-#       - build
-
-#     cache:
-#       paths:
-#         - node_modules/
-
-#     install_dependencies:
-#       stage: build
-#       script:
-#         - npm install
-#       artifacts:
-#         paths:
-#           - node_modules/
-# default:
-#   image: alpine:latest
 
 # test:
 #   script:
