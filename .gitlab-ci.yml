@@ -39,8 +39,3 @@ default:
   image: "alpine:latest"
 stages: 
   - build
-
-
-# test:
-#   script:
-#   - npm install
