@@ -45,10 +45,11 @@
 
 
 --- 
+default: 
+  image: "node:latest"
 build: 
   script: 
     - "npm install"
-    - "npm run-script build"
   stage: build
   tags: 
     - testing
@@ -56,12 +57,10 @@ build:
 cache: 
   paths: 
     - node_modules/
-default: 
-  image: "node:latest"
-deploy: 
-  script: 
-    - "npm run-script deploy"
-  stage: deploy
+# deploy: 
+#   script: 
+#     - "npm run-script deploy"
+#   stage: deploy
 stages: 
   - build
-  - deploy
+  # - deploy
