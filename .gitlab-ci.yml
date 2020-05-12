@@ -1,19 +1,19 @@
---- 
-default: 
-  image: node:latest
-  # image: "alpine:latest"
-build: 
-  before_script: 
-    - "npm install"
-  script: 
-    - "echo \"Building deploy package\""
-    - "echo \"Build successful\""
-  stage: build
-  tags: 
-    - testing
-    - development
-stages: 
-  - build
+# --- 
+# default: 
+#   image: node:latest
+#   # image: "alpine:latest"
+# build: 
+#   before_script: 
+#     - "npm install"
+#   script: 
+#     - "echo \"Building deploy package\""
+#     - "echo \"Build successful\""
+#   stage: build
+#   tags: 
+#     - testing
+#     - development
+# stages: 
+#   - build
 
 # --- 
 # build: 
@@ -42,3 +42,26 @@ stages:
 #   image: "alpine:latest"
 # stages: 
 #   - build
+
+
+--- 
+build: 
+  script: 
+    - "npm install"
+    - "npm run-script build"
+  stage: build
+  tags: 
+    - testing
+    - development
+cache: 
+  paths: 
+    - node_modules/
+default: 
+  image: "node:latest"
+deploy: 
+  script: 
+    - "npm run-script deploy"
+  stage: deploy
+stages: 
+  - build
+  - deploy
