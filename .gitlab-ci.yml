@@ -1,6 +1,7 @@
 --- 
 default: 
-  image: "alpine:latest"
+  image: node:latest
+  # image: "alpine:latest"
 build: 
   before_script: 
     - "npm install"
