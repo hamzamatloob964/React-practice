@@ -83,21 +83,22 @@ build:
   tags: 
     - testing
     - development
-# deploy_production: 
-#   environment: 
-#     name: production
-#     url: "<your deployment url>"
-#   only: 
-#     - master
-#   script: 
-#     - "echo \"Deploying to server\""
-#     - "cp -rv build/* /var/www/html/<destination_folder>/"
-#     - "echo \"Deployed\""
-#   stage: deploy
-#   tags: 
-#     - "<tag you provided while registering the token>"
-#     - "<second tag>"
+deploy_production: 
+  environment: 
+    name: production
+    url: "https://routing-app.herokuapp.com/"
+  only: 
+    - master
+  script: 
+    - "echo \"Deploying to server\""
+    - "cp -rv build/* /var/www/html/production/"
+    - "echo \"Deployed\""
+  stage: deploy
+  tags: 
+    - testing
+    - development
+
 stages: 
   - build
-  # - deploy
+  - deploy
 
