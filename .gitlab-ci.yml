@@ -44,23 +44,60 @@
 #   - build
 
 
+# --- 
+# default: 
+#   image: "node:latest"
+# build: 
+#   script: 
+#     - "npm install"
+#   stage: build
+#   tags: 
+#     - testing
+#     - development
+# cache: 
+#   paths: 
+#     - node_modules/
+# # deploy: 
+# #   script: 
+# #     - "npm run-script deploy"
+# #   stage: deploy
+# stages: 
+#   - build
+#   # - deploy
+
+
 --- 
 default: 
   image: "node:latest"
 build: 
+  artifacts: 
+    expire_in: "1 hour"
+    paths: 
+      - build
   script: 
+    - "echo \"Building deploy package\""
     - "npm install"
+    - "npm build"
+    - "echo \"Build successful\""
   stage: build
   tags: 
     - testing
     - development
-cache: 
-  paths: 
-    - node_modules/
-# deploy: 
+# deploy_production: 
+#   environment: 
+#     name: production
+#     url: "<your deployment url>"
+#   only: 
+#     - master
 #   script: 
-#     - "npm run-script deploy"
+#     - "echo \"Deploying to server\""
+#     - "cp -rv build/* /var/www/html/<destination_folder>/"
+#     - "echo \"Deployed\""
 #   stage: deploy
+#   tags: 
+#     - "<tag you provided while registering the token>"
+#     - "<second tag>"
 stages: 
   - build
   # - deploy
+
