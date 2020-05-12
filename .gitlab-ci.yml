@@ -73,7 +73,7 @@ build:
   artifacts: 
     expire_in: "1 hour"
     paths: 
-      - build/
+      - build
   script: 
     - "echo \"Building deploy package\""
     - "npm install"
