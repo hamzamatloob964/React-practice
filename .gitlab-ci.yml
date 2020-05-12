@@ -73,7 +73,7 @@ build:
   artifacts: 
     expire_in: "1 hour"
     paths: 
-      - /build
+      - build
   script: 
     - "echo \"Building deploy package\""
     - "npm install"
@@ -91,7 +91,7 @@ deploy_production:
     - master
   script: 
     - "echo \"Deploying to server\""
-    - "cp -rv /build/* /var/www/html/production/"
+    - "cp -rv build /var/www/html/production/"
     - "echo \"Deployed\""
   stage: deploy
   tags: 
