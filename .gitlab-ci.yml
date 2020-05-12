@@ -91,7 +91,7 @@ deploy_production:
     - master
   script: 
     - "echo \"Deploying to server\""
-    - "cp -rv build/* /var/www/html/production/"
+    - "cp -rv /build/* /var/www/html/production/"
     - "echo \"Deployed\""
   stage: deploy
   tags: 
