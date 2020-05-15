@@ -77,7 +77,7 @@ build:
   script: 
     - "echo \"Building deploy package\""
     - "npm install"
-    - "npm build"
+    - "npm run-script build"
     - "echo \"Build successful\""
   stage: build
   tags: 
