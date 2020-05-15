@@ -3,7 +3,7 @@ import '../css/App.css';
 
 export default function Contact() {
   const [name, setName] = useState('');
-  const [updateName, setupdateName] = useState('');
+  //const [updateName, setupdateName] = useState('');
   const [nameArray, setnameArray] = useState([]);
   const addValue = () => {
     nameArray.push(name)
@@ -18,8 +18,7 @@ export default function Contact() {
         <input type="text" width="100px" height="60px" 
         onInput={e => setName(e.target.value)}/>
         <label>Enter name to update : </label>
-        <input type="text" width="100px" height="60px" 
-        onInput={e => setupdateName(e.target.value)}/>
+        <input type="text" width="100px" height="60px" />
         <button onClick={addValue} type="button" 
         style={{height: 30, width: 70, marginLeft:5 }}>Create</button>
         <button type="button" style={{height: 30, width: 70, marginLeft:5 }}>Update</button>

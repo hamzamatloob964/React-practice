@@ -1,6 +1,6 @@
 import React,{ useState, useEffect } from 'react';
 import '../css/App.css';
-import { BrowserRouter as Router,Switch,Route,Link } from "react-router-dom";
+import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
 //import Routes from './AppRouter';
 import Login from '../views/Login'
 import Dashboard from '../views/Dashboard'
@@ -10,10 +10,10 @@ import store from '../store/index'
 //import store2 from '../store2/index'
 
 function App() {
-  const [name,setName] = useState('');
+  //const [name,setName] = useState('');
 
   useEffect(() => {
-    console.log("state name value in mount is :",name)
+    //console.log("state name value in mount is :",name)
   });
 
   return (

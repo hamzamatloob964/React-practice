@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/App.css';
 
 export default class About extends React.Component{
