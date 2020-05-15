@@ -91,7 +91,10 @@ deploy_production:
     - master
   script: 
     - "echo \"Deploying to server\""
-    - "cp -rv build /var/www/html/production/"
+    # - "cp -rv build/* /var/www/html/production/"
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
     - "echo \"Deployed\""
   stage: deploy
   tags: 
