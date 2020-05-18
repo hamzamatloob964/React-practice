@@ -73,8 +73,8 @@ build:
   artifacts: 
     expire_in: "1 hour"
     paths: 
-      # - build
-      - dist/
+      - build
+      # - dist/
   script: 
     - "echo \"Building deploy package\""
     - "npm install"
@@ -96,7 +96,8 @@ deploy_production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - cd dist
+    - cd build
+    # - cd dist
     - dpl --provider=heroku --app=$routing-app --api-key=$546bb20f-587c-49c0-b784-708ba257ca1c --skip_cleanup
     - "echo \"Deployed\""
   stage: deploy
