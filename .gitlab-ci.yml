@@ -92,7 +92,6 @@ deploy_production:
     - master
   script: 
     - "echo \"Deploying to server\""
-    # - "cp -rv build/* /var/www/html"
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
