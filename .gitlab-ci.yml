@@ -96,11 +96,9 @@ deploy_production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - heroku login
-    - heroku keys:add
     - cd build
     # - cd dist
-    - dpl --provider=heroku --app=routing-app --api-key=$546bb20f-587c-49c0-b784-708ba257ca1c --skip_cleanup
+    - dpl --provider=heroku --app=routing-app --api-key=$ab278129-8bc7-4bc8-8ccd-b171d35dbbf8 --skip_cleanup
     - "echo \"Deployed\""
   stage: deploy
   tags: 
