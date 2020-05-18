@@ -91,6 +91,7 @@ deploy_production:
     url: "https://routing-app.herokuapp.com/"
   only: 
     - master
+  image: "ruby:2.5"
   script: 
     - "echo \"Deploying to server\""
     - apt-get update -qy
