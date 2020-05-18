@@ -98,6 +98,7 @@ deploy_production:
     - gem install dpl
     - cd build
     # - cd dist
+    # - cd dist
     - dpl --provider=heroku --app=routing-app --api-key=ab278129-8bc7-4bc8-8ccd-b171d35dbbf8 --skip_cleanup
     - "echo \"Deployed\""
   stage: deploy
